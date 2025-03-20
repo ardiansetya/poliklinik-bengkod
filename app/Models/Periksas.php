@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Periksas extends Model
@@ -14,8 +15,16 @@ class Periksas extends Model
         'keluhan',
         'diagnosis',
     ];
-public function pasiens(): HasMany {
-    return $this->hasMany(Periksa::class, 'id_pasiens');
-}
+
+    public function pasiens(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'id_pasien');
+    }
+
+    public function dokter(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'id_dokter');
+    }
+
     
 }
