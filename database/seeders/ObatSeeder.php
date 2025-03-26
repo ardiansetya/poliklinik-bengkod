@@ -13,7 +13,7 @@ class ObatSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('obat')->insert([
+        DB::table('obats')->insert([
                 [
                     'nama_obat' => 'Paracetamol',
                     'kemasan' => 'Tablet',
