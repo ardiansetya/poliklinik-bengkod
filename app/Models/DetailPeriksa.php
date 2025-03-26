@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class DetailPeriksa extends Model
 {
-    public function idPeriksa(): BelongsTo
+    protected $table = 'detail_periksa';
+    protected $fillable = ['id_periksa', 'id_obat'];
+    public function periksa(): BelongsTo
     {
         return $this->belongsTo(Periksas::class, 'id_periksa');
     }
-    public function idObat(): BelongsTo
+    public function obat(): BelongsTo
     {
         return $this->belongsTo(Obat::class, 'id_obat');
     }
