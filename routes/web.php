@@ -23,3 +23,9 @@ Route::get('/dokter/obat', function () {
 Route::get('/pasien/dashboard', function () {
     return view('pasien.dashboard');
 });
+Route::get('/pasien/periksa', function () {
+    return view('pasien.periksa');
+});
+Route::get('/pasien/riwayat', function () {
+    return view('pasien.riwayat');
+});
