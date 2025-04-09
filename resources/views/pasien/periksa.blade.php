@@ -1,5 +1,6 @@
 @extends('layout.app')
 
+
 @section('sidebar-menu')
     <ul
               class="nav sidebar-menu flex-column"
@@ -8,19 +9,19 @@
               data-accordion="false"
             >
               <li class="nav-item menu-open">
-                <a href="#" class="nav-link {{ request()->is('pasien/dashboard') ? '' : 'active' }}">
+                <a href={{ route('pasien.dashboard') }} class="nav-link {{ request()->is('pasien/dashboard') ? '' : 'active' }}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Dashboard
                   </p>
                 </a>
-                <a href="#" class="nav-link {{ request()->is('pasien/periksa') ? '' : 'active' }}">
+                <a href={{ route('pasien.periksa') }} class="nav-link {{ request()->is('pasien/periksa') ? '' : 'active' }}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Periksa
                   </p>
                 </a>
-                <a href="#" class="nav-link {{ request()->is('pasien/riwayat') ? '' : 'active' }}">
+                <a href={{ route('pasien.riwayat') }} class="nav-link {{ request()->is('pasien/riwayat') ? '' : 'active' }}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Riwayat
@@ -29,6 +30,7 @@
               </li>
             </ul>
 @endsection
+
 
 @section('content-header')
     <div class="app-content-header">
@@ -54,41 +56,24 @@
     <div class="app-content">
           <!--begin::Container-->
           <div class="container-fluid">
-           <!-- Tabel Periksa -->
-        <div class="card">
-            <div class="card-header bg-primary text-white d-flex  align-items-center">
-                <span>Periksa</span>
-                <form class="d-flex ms-auto" style="max-width: 200px;">
-                    <input class="form-control form-control-sm me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-sm btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
-                </form>
+         <!-- Form Periksa -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                Periksa
             </div>
-            <div class="card-body p-0">
-                <table class="table table-bordered table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>NO</th>
-                            <th>ID Periksa</th>
-                            <th>Pasien</th>
-                            <th>Tanggal Periksa</th>
-                            <th>Catatan</th>
-                            <th>Biaya Periksa</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>Isna</td>
-                            <td>2023-01-01</td>
-                            <td>Pasien mengalami demam tinggi dan batuk</td>
-                            <td>
-                                150000
-                            </td>
-                        </tr>
-                       
-                    </tbody>
-                </table>
+            <div class="card-body">
+                <form >
+                    <div class="mb-3">
+                        <label for="nama_obat" class="form-label">Nama Anda</label>
+                        <input type="text" class="form-control" id="nama_obat" name="nama_obat" placeholder="Input your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="kemasan" class="form-label">Dokter</label>
+                        <input type="" class="form-control" id="kemasan" name="kemasan">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
         </div>
           <!--end::Container-->
