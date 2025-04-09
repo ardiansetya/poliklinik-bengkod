@@ -6,6 +6,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// login
+Route::get('/login', function () {
+    return view('login');
+});
+
+// register
+Route::get('/register', function () {
+    return view('register');
+});
+
 
 // dokter
 Route::get('/dokter/dashboard', function () {
