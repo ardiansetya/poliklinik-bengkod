@@ -68,7 +68,7 @@
       @include('layout.header')
       <!--end::Header-->
       <!--begin::Sidebar-->
-      @yield('sidebar')
+      @include('layout.sidebar')
       <!--end::Sidebar-->
       <!--begin::App Main-->
       <main class="app-main">
@@ -81,18 +81,7 @@
       </main>
       <!--end::App Main-->
       <!--begin::Footer-->
-      <footer class="app-footer">
-        <!--begin::To the end-->
-        <div class="float-end d-none d-sm-inline">Anything you want</div>
-        <!--end::To the end-->
-        <!--begin::Copyright-->
-        <strong>
-          Copyright &copy; 2014-2024&nbsp;
-          <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
-        </strong>
-        All rights reserved.
-        <!--end::Copyright-->
-      </footer>
+      @include('layout.footer')
       <!--end::Footer-->
     </div>
     <!--end::App Wrapper-->
