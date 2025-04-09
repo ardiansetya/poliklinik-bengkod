@@ -8,19 +8,19 @@
               data-accordion="false"
             >
               <li class="nav-item menu-open">
-                <a href="#" class="nav-link {{ request()->is('dokter/dashboard') ? '' : 'active' }}">
+                  <a href={{ route('dokter.dashboard') }} class="nav-link {{ request()->is('dokter/dashboard') ? '' : 'active' }}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Dashboard
                   </p>
                 </a>
-                <a href="#" class="nav-link {{ request()->is('dokter/periksa') ? '' : 'active' }}">
+                <a href={{ route('dokter.periksa') }} class="nav-link {{ request()->is('dokter/periksa') ? '' : 'active' }}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Periksa
                   </p>
                 </a>
-                <a href="#" class="nav-link {{ request()->is('dokter/obat') ? '' : 'active' }}">
+                <a href={{ route('dokter.obat') }} class="nav-link {{ request()->is('dokter/obat') ? '' : 'active' }}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Obat
