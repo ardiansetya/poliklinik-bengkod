@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Periksas;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PeriksaPasienController extends Controller
@@ -12,9 +13,9 @@ class PeriksaPasienController extends Controller
      */
     public function index()
     {
-        $periksas = Periksas::all();
+        $dokters = User::where('role', 'dokter')->get();
 
-        return view('pasien.periksa', compact('periksas'));
+        return view('pasien.periksa', compact('dokters'));
     }
 
     /**

@@ -27,11 +27,11 @@ class User extends Authenticatable
         'role',
     ];
 
-    public function pasiens(): HasMany
+    public function pasien(): HasMany
     {
         return $this->hasMany(Periksas::class, 'id_pasiens');
     }
-    public function dokters(): HasMany
+    public function dokter(): HasMany
     {
         return $this->hasMany(Periksas::class, 'id_dokter');
     }
