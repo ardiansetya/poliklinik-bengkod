@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
                 'no_hp' => '089672944225',
                 'email' => 'isna.pasien@gmail.com',
                 'password' => Hash::make('password'),
-                'role' => 'dokter',
+                'role' => 'pasien',
             ],
         ]);
     }

@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ObatController;
 use App\Http\Controllers\PeriksaController;
+use App\Http\Controllers\PeriksaPasienController;
+use App\Http\Controllers\RiwayatPasienController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -43,10 +45,13 @@ Route::get('/pasien/dashboard', function () {
     return view('pasien.dashboard');
 })->name('pasien.dashboard');
 
-Route::get('/pasien/periksa', function () {
-    return view('pasien.periksa');
-})->name('pasien.periksa');
+// Route::get('/pasien/periksa', function () {
+//     return view('pasien.periksa');
+// })->name('pasien.periksa');
 
-Route::get('/pasien/riwayat', function () {
-    return view('pasien.riwayat');
-})->name('pasien.riwayat');
+// Route::get('/pasien/riwayat', function () {
+//     return view('pasien.riwayat');
+// })->name('pasien.riwayat');
+
+Route::resource('/pasien/periksa', PeriksaPasienController::class)->names(names: 'pasien.periksa');
+Route::resource('/pasien/riwayat', RiwayatPasienController::class)->names(names: 'pasien.riwayat');

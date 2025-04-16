@@ -14,13 +14,13 @@
                     Dashboard
                   </p>
                 </a>
-                <a href={{ route('pasien.periksa') }} class="nav-link {{ request()->is('pasien/periksa') ? '' : 'active' }}">
+                <a href={{ route('pasien.periksa.index') }} class="nav-link {{ request()->is('pasien/periksa') ? '' : 'active' }}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Periksa
                   </p>
                 </a>
-                <a href={{ route('pasien.riwayat') }} class="nav-link {{ request()->is('pasien/riwayat') ? '' : 'active' }}">
+                <a href={{ route('pasien.riwayat.index') }} class="nav-link {{ request()->is('pasien/riwayat') ? '' : 'active' }}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Riwayat
