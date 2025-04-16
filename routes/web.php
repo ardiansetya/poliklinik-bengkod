@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ObatController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -26,9 +27,11 @@ Route::get('/dokter/periksa', function () {
     return view('dokter.periksa');
 })->name('dokter.periksa');
 
-Route::get('/dokter/obat', function () {
-    return view('dokter.obat');
-})->name('dokter.obat');
+// Route::get('/dokter/obat', function () {
+//     return view('dokter.obat');
+// })->name('dokter.obat');
+
+Route::resource('/dokter/obat', ObatController::class)->names(names: 'dokter.obat');
 
 
 // pasien
