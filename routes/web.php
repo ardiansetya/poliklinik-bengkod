@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ObatController;
+use App\Http\Controllers\PeriksaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,13 +20,13 @@ Route::get('/register', function () {
 
 
 // dokter
-Route::resource('/dokter/dashboard', ObatController::class)->names(names: 'dokter.dashboard');
-Route::resource('/dokter/periksa', ObatController::class)->names(names: 'dokter.periksa');
+// Route::resource('/dokter/dashboard', ObatController::class)->names(names: 'dokter.dashboard');
+Route::resource('/dokter/periksa', PeriksaController::class)->names(names: 'dokter.periksa');
 Route::resource('/dokter/obat', ObatController::class)->names(names: 'dokter.obat');
 
-// Route::get('/dokter/dashboard', function () {
-//     return view('dokter.dashboard');
-// })->name('dokter.dashboard');
+Route::get('/dokter/dashboard', function () {
+    return view('dokter.dashboard');
+})->name('dokter.dashboard');
 
 // Route::get('/dokter/periksa', function () {
 //     return view('dokter.periksa');

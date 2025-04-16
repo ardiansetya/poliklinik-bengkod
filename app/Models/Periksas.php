@@ -8,15 +8,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Periksas extends Model
 {
-    // protected $fillable = [
-    //     'id_pasien',
-    //     'id_dokter',
-    //     'tanggal',
-    //     'keluhan',
-    //     'diagnosis',
-    // ];
+    protected $fillable = [
+        'id_pasien',
+        'id_dokter',
+        'tgl_periksa',
+        'catatan',
+        'biaya_periksa'
+    ];
 
-    public function pasiens(): BelongsTo
+    public function pasien(): BelongsTo
     {
         return $this->belongsTo(User::class, 'id_pasien');
     }
@@ -26,7 +26,7 @@ class Periksas extends Model
         return $this->belongsTo(User::class, 'id_dokter');
     }
 
-    public function idPeriksa(): HasMany
+    public function detailperiksa(): HasMany
     {
         return $this->hasMany(DetailPeriksa::class, 'id_periksa');
     }

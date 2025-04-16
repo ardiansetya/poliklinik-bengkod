@@ -14,7 +14,7 @@
                     Dashboard
                   </p>
                 </a>
-                <a href={{ route('dokter.periksa') }} class="nav-link {{ request()->is('dokter/periksa') ? '' : 'active' }}">
+                <a href={{ route('dokter.periksa.index') }} class="nav-link {{ request()->is('dokter/periksa') ? '' : 'active' }}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Periksa

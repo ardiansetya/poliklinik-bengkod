@@ -15,6 +15,7 @@ class PeriksaController extends Controller
     public function index()
     {
         $periksas = Periksas::all();
+        
         return view('dokter.periksa', compact('periksas'));
     }
 
