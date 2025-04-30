@@ -8,7 +8,7 @@
               data-accordion="false"
             >
               <li class="nav-item menu-open">
-                  <a href={{ route('dokter.dashboard.index') }} class="nav-link {{ request()->is('dokter/dashboard') ? '' : 'active' }}">
+                  <a href={{ route('dokter.dashboard') }} class="nav-link {{ request()->is('dokter/dashboard') ? '' : 'active' }}">
                   <i class="nav-icon bi bi-speedometer"></i>
                   <p>
                     Dashboard
