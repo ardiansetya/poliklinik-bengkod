@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
                 'name' => 'dr. bram',
                 'alamat' => 'Semarang',
                 'no_hp' => '089672944227',
-                'email' => 'andi.dokter@gmail.com',
+                'email' => 'bram.dokter@gmail.com',
                 'password' => Hash::make('password'),
                 'role' => 'dokter',
             ],

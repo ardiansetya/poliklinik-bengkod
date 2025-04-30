@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Periksas;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PeriksaPasienController extends Controller
 {
@@ -31,7 +32,17 @@ class PeriksaPasienController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $request->validate([
+            'id_dokter' => 'required|exists:users,id'
+        ]);
+
+        Periksas::create([
+            'id_pasien' => Auth::id(),
+            'id_dokter' => $request->id_dokter,
+        ]);
+
+        return redirect()->back()->with('success', 'Berhasil mengajukan pemeriksaan.');
     }
 
     /**

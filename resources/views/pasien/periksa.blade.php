@@ -61,21 +61,21 @@
                     Periksa
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="{{ route('pasien.periksa.store') }}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nama Anda</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                placeholder="Input your name">
+                            <input type="text" value="{{ Auth::user()->name }}" class="form-control" id="exampleInputEmail1"
+                                placeholder="Input your name" readonly>
                         </div>
                         <div class="form-group mt-2">
                             <label for="exampleSelectRounded0">Pilih Dokter</label>
-                            <select class="custom-select rounded-0" id="exampleSelectRounded0">
+                            <select name="id_dokter" class="appearance-none custom-select ms-2 border border-primary rounded-xl px-4 py-1 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition duration-200 ease-in-out hover:shadow-md" id="exampleSelectRounded0">
                                 @foreach ($dokters as $dokter)
                                     <option value="{{ $dokter->id }}">{{ $dokter->name }}</option>
                                 @endforeach
                             </select>
                         </div>
-
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>

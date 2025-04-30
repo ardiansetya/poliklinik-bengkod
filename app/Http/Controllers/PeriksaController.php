@@ -6,6 +6,7 @@ use App\Models\Obat;
 use App\Models\Periksas;
 use Illuminate\Http\Request;
 use App\Models\DetailPeriksa;
+use Illuminate\Support\Facades\Auth;
 
 class PeriksaController extends Controller
 {
@@ -14,7 +15,7 @@ class PeriksaController extends Controller
      */
     public function index()
     {
-        $periksas = Periksas::all();
+        $periksas = Periksas::where('id_dokter', Auth::id())->get();
         
         return view('dokter.periksa', compact('periksas'));
     }
