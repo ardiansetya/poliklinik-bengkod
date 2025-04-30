@@ -21,7 +21,9 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.perform');
 
 // Logout
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
+Route::get('/denied', function () {
+    return view('denied');
+})->name('denied');
 
 
 
