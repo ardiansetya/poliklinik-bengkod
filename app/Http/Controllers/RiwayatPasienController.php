@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DetailPeriksa;
 use App\Models\Periksas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RiwayatPasienController extends Controller
 {
@@ -13,9 +14,9 @@ class RiwayatPasienController extends Controller
      */
     public function index()
     {
-        $periksas = Periksas::all();
+        $riwayat = Periksas::where('id_pasien', Auth::id())->get();
 
-        return view('pasien.riwayat', compact('periksas'));
+        return view('pasien.riwayat', compact('riwayat'));
     }
 
     /**

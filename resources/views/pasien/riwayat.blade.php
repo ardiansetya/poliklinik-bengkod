@@ -80,7 +80,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($periksas as $periksa)
+                            @foreach ($riwayat as $periksa)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $periksa->id }}</td>
@@ -88,11 +88,13 @@
                                     <td>{{ $periksa->tgl_periksa }}</td>
                                     <td>{{ $periksa->catatan }}</td>
                                     <td>
-                                        @foreach ($periksa->detailPeriksa as $detail)
+                                        @forelse ($periksa->detailPeriksa as $detail)
                                             <div>{{ $detail->obat->nama_obat }}</div>
-                                        @endforeach
+                                            @empty
+                                            <div>Tidak ada obat</div>
+                                        @endforelse
                                     </td>
-                                    <td>{{ $periksa->biaya_periksa }}</td>
+                                    <td>Rp {{ number_format($periksa->biaya_periksa, 0, ',', '.') }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
