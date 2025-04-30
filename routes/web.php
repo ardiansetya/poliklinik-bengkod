@@ -24,37 +24,24 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
 
+
 // dokter
 // Route::resource('/dokter/dashboard', ObatController::class)->names(names: 'dokter.dashboard');
-Route::resource('/dokter/periksa', PeriksaController::class)->names(names: 'dokter.periksa');
-Route::resource('/dokter/obat', ObatController::class)->names(names: 'dokter.obat');
-
-Route::get('/dokter/dashboard', function () {
-    return view('dokter.dashboard');
-})->name('dokter.dashboard');
-
-// Route::get('/dokter/periksa', function () {
-//     return view('dokter.periksa');
-// })->name('dokter.periksa');
-
-// Route::get('/dokter/obat', function () {
-//     return view('dokter.obat');
-// })->name('dokter.obat');
+Route::prefix('dokter')->middleware(["auth", 'role:dokter'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dokter.dashboard');
+    })->name('dokter.dashboard');
+    Route::resource('/periksa', PeriksaController::class)->names(names: 'dokter.periksa');
+    Route::resource('/obat', ObatController::class)->names(names: 'dokter.obat');
+});
 
 
 
 // pasien
-Route::get('/pasien/dashboard', function () {
-    return view('pasien.dashboard');
-})->name('pasien.dashboard');
-
-// Route::get('/pasien/periksa', function () {
-//     return view('pasien.periksa');
-// })->name('pasien.periksa');
-
-// Route::get('/pasien/riwayat', function () {
-//     return view('pasien.riwayat');
-// })->name('pasien.riwayat');
-
-Route::resource('/pasien/periksa', PeriksaPasienController::class)->names(names: 'pasien.periksa');
-Route::resource('/pasien/riwayat', RiwayatPasienController::class)->names(names: 'pasien.riwayat');
+Route::prefix('pasien')->middleware(["auth", 'role:pasien'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('pasien.dashboard');
+    })->name('pasien.dashboard');
+    Route::resource('/periksa', PeriksaPasienController::class)->names(names: 'pasien.periksa');
+    Route::resource('/riwayat', RiwayatPasienController::class)->names(names: 'pasien.riwayat');
+});
