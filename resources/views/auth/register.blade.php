@@ -61,19 +61,31 @@
             <div class="input-group mb-3">
               <input type="text" class="form-control" placeholder="Nama" name="name" />
               <div class="input-group-text"><span class="bi bi-person"></span></div>
+                @error('name')
+              <p class="text-danger font-bold">{{ $message }}</p>
+            @enderror
             </div>
             <div class="input-group mb-3">
               <input type="email" class="form-control" placeholder="Email" name="email" />
               <div class="input-group-text"><span class="bi bi-envelope"></span></div>
+                @error('email')
+              <p class="text-danger font-bold">{{ $message }}</p>
+            @enderror
             </div>
             <div class="input-group mb-3">
               <input type="password" class="form-control" placeholder="Password" name="password" />
               <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
+                @error('password')
+              <p class="text-danger font-bold">{{ $message }}</p>
+            @enderror
             </div>
             <div class="input-group mb-3">
-              <input type="password" class="form-control" placeholder="Komfirmasi Password" name="conPassword" />
+              <input type="password" class="form-control" placeholder="Komfirmasi Password" name="password_confirmation" />
               <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
+              
             </div>
+
+          
             <!--begin::Row-->
             <div class="row">
               <div class="col-8">
@@ -85,7 +97,7 @@
               <!-- /.col -->
               <div class="col-4">
                 <div class="d-grid gap-2">
-                  <button type="submit" class="btn btn-primary">Sign In</button>
+                  <button type="submit" class="btn btn-primary">Register</button>
                 </div>
               </div>
               <!-- /.col -->
@@ -94,7 +106,7 @@
           </form>
           <!-- /.social-auth-links -->
           <p class="mb-0">
-            <a href="login.html" class="text-center"> I already have a membership </a>
+            <a href="{{ route('login') }}" class="text-center"> I already have a membership </a>
           </p>
         </div>
         <!-- /.register-card-body -->

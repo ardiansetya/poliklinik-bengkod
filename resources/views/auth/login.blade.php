@@ -66,6 +66,9 @@
               <input type="password" class="form-control" placeholder="Password" name="password" />
               <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
             </div>
+            @error('email')
+              <p class="text-danger font-bold">{{ $message }}</p>
+            @enderror
             <!--begin::Row-->
             <div class="row">
               <div class="col-8">
@@ -85,7 +88,7 @@
           </form>
           <!-- /.social-auth-links -->
           <p class="mb-0">
-            <a href="register.html" class="text-center"> Register a new membership </a>
+            <a href="{{ route('register') }}" class="text-center"> Register a new membership </a>
           </p>
         </div>
         <!-- /.login-card-body -->

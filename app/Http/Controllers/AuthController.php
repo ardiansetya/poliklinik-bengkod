@@ -53,7 +53,7 @@ class AuthController extends Controller
         }
 
         $user = User::create([
-            'nama' => $request->name,
+            'name' => $request->name,
             'alamat' => null,
             'no_hp' => null,
             'email' => $request->email,
@@ -62,6 +62,7 @@ class AuthController extends Controller
         ]);
 
         Auth::login($user);
+
 
         return redirect()->intended('/pasien/dashboard');
     }
