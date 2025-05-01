@@ -36,7 +36,7 @@
 <body class="register-page bg-body-secondary">
     <div class="register-box">
         <div class="register-logo">
-            <h1>Register</h1>
+            <h1>Register Poliklinik</h1>
         </div>
         <!-- /.register-logo -->
         <div class="card">
