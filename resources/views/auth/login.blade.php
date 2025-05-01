@@ -50,7 +50,7 @@
   <body class="login-page bg-body-secondary">
     <div class="login-box">
       <div class="login-logo">
-        <h1>Login</h1>
+        <h1>Login Poliklinik</h1>
       </div>
       <!-- /.login-logo -->
       <div class="card">
